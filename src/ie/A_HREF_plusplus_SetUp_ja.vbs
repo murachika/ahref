@@ -9,10 +9,19 @@ Dim InstallFile
 Dim AppName
 Dim HtmlFileName
 
-Set FS       = CreateObject("scripting.FileSystemObject")
-Set WSHShell = WScript.CreateObject("WScript.Shell")
-AppName      = "A HREF++"
-HtmlFileName = "\ahref.html"
+Set FS         = CreateObject("scripting.FileSystemObject")
+Set WSHShell   = WScript.CreateObject("WScript.Shell")
+
+AppName        = "A HREF++（あ・は～ふ）"
+InstMessage0   = AppName & " をインストールする時は「はい」、" & Chr(13) & "アンインストールする時は「いいえ」、" & Chr(13) & "終了するときは「キャンセル」を押して下さい。"
+InstMessage1   = AppName & " は既にインストールされています。"
+InstMessage2   = AppName & " のインストールが終了しました。" & Chr(13) & "ブラウザを再起動して下さい。"
+UninstMessage1 = AppName & " はまだインストールされていません。"
+UninstMessage2 = AppName & " のアンインストールが終了しました。"
+MsgBoxButtons  = 67 'vbYesNoCancel(3) + vbInformation(64)
+MsgBoxTitle    = AppName & " Ver3.2 セットアップ"
+AlertMessage   = "URLが含まれていません。"
+HtmlFileName   = "\ahref_ja.html"
 
 DesktopPath = WSHShell.SpecialFolders("Desktop")
 InstallPath = FS.GetSpecialFolder(0)
@@ -27,7 +36,7 @@ End If
 InstallFile = InstallPath & HtmlFileName
 
 Dim instMsg
-instMsg=MsgBox ("If you install  " + AppName + "  click 'Yes'" + vbCr + "  or uninstall  " + AppName + "  click 'No'",vbYesNoCancel,AppName + " Setup")
+instMsg=MsgBox (InstMessage0,MsgBoxButtons,MsgBoxTitle)
 If instMsg=vbYes Then
 	call install
 	WScript.Quit
@@ -40,13 +49,13 @@ End If
 
 Sub install
 	If FS.FileExists(InstallFile) = True Then
-		MsgBox AppName + "  is already installed.",vbInformation,AppName + " Setup"
+		MsgBox InstMessage1,vbExclamation,MsgBoxTitle
 		Exit Sub
 	End If
 
 	Dim CTF
 	Set CTF = FS.CreateTextFile(InstallFile, True)
-	CTF.WriteLine "<SCRIPT language='JavaScript' charset='UTF-8'>"
+	CTF.WriteLine "<SCRIPT language='JavaScript'>"
 	CTF.WriteLine "/*"
 	CTF.WriteLine "Copyright (C) 2010 murachika All rights reserved."
 	CTF.WriteLine "http://irts.jp/"
@@ -116,7 +125,7 @@ Sub install
 	CTF.WriteLine "		n++"
 	CTF.WriteLine "		} while (n < list.length);"
 	CTF.WriteLine "	} else {"
-	CTF.WriteLine "	alert ('No URLs Found.');"
+	CTF.WriteLine "	alert ('" & AlertMessage & "');"
 	CTF.WriteLine "	}"
 	CTF.WriteLine "}"
 	CTF.WriteLine "function exet() {"
@@ -159,24 +168,24 @@ Sub install
 	CTF.WriteLine "</SCRIPT>"
 	CTF.Close
 
-	WSHShell.RegWrite "HKCU\Software\Microsoft\Internet Explorer\MenuExt\" + AppName + "\", InstallFile, "REG_SZ"
-	WSHShell.RegWrite "HKCU\Software\Microsoft\Internet Explorer\MenuExt\" + AppName + "\contexts", "52", "REG_DWORD"
+	WSHShell.RegWrite "HKCU\Software\Microsoft\Internet Explorer\MenuExt\" & AppName & "\", InstallFile, "REG_SZ"
+	WSHShell.RegWrite "HKCU\Software\Microsoft\Internet Explorer\MenuExt\" & AppName & "\contexts", "52", "REG_DWORD"
 	
-	MsgBox AppName + "  install completed successfully." + vbCr + "Please restart your Internet Explorer.",vbInformation,AppName + " Setup"
+	MsgBox InstMessage2,vbInformation,MsgBoxTitle
 	Exit Sub
 End Sub
 
 Sub uninstall
 	If FS.FileExists(InstallFile) = False Then
-		MsgBox AppName + "  is not yet installed.",vbInformation,AppName + " Setup"
+		MsgBox UninstMessage1,vbExclamation,MsgBoxTitle
 		Exit Sub
 	Else
 		If FS.FileExists(InstallFile) = True Then
 			FS.DeleteFile InstallFile
 		End If
 		
-		WSHShell.RegDelete "HKCU\Software\Microsoft\Internet Explorer\MenuExt\" + AppName + "\"
+		WSHShell.RegDelete "HKCU\Software\Microsoft\Internet Explorer\MenuExt\" & AppName & "\"
 		
-		MsgBox AppName + "  uninstall completed successfully.",vbInformation,AppName + " Setup"
+		MsgBox UninstMessage2,vbInformation,MsgBoxTitle
 	End If
 End Sub
