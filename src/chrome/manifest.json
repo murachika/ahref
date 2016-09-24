@@ -2,7 +2,7 @@
   "name": "__MSG_extName__",
   "description": "__MSG_extDescription__",
   "default_locale": "ja",
-  "version": "0.7.2",
+  "version": "0.7.3",
   "manifest_version": 2,
   "icons": { "16": "img/ahref16.png",
              "48": "img/ahref48.png",

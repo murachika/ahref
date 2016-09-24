@@ -168,9 +168,15 @@ function ahrefopen(url) {
     popupfromwindow = "";
 }
 
+
+var unixTimestamp1 = 0;
+var unixTimestamp2 = 0;
+var timeDiff = 0;
 chrome.extension.onRequest.addListener(
     function(request, sender, sendResponse) {
         if ( request.type == "keyevent" ) {
+
+            var date = new Date() ;
 
             if ( request.ctrlkey ) {
                 ctrlchk   = request.ctrlkey;
@@ -179,6 +185,7 @@ chrome.extension.onRequest.addListener(
                 } else {
                     ctrlshiftalt = ctrlshiftalt.replace(/^\d(\d)(\d)$/, "0$1$2");
                 }
+                unixTimestamp1 = date.getTime() ;
             }
             if ( request.shiftkey ) {
                 shiftchk  = request.shiftkey;
@@ -187,6 +194,7 @@ chrome.extension.onRequest.addListener(
                 } else {
                     ctrlshiftalt = ctrlshiftalt.replace(/^(\d)\d(\d)$/, "$10$2");
                 }
+                unixTimestamp1 = date.getTime() ;
             }
             if ( request.altkey ) {
                 altchk   = request.altkey;
@@ -195,14 +203,18 @@ chrome.extension.onRequest.addListener(
                 } else {
                     ctrlshiftalt = ctrlshiftalt.replace(/^(\d)(\d)\d$/, "$1$20");
                 }
+                unixTimestamp1 = date.getTime() ;
             }
 
             if ( request.shortcutkey ) {
                 shortcutkey  = request.shortcutkey;
+                unixTimestamp2 = date.getTime();
             }
 
             if ( localStorage["ahref-keyboardshortcut"] == "on" ) {
-                if ( localStorage["ahref-ctrlshiftalt"] == ctrlshiftalt && shortcutkey == "on" && executecount == 0) {
+                timeDiff = unixTimestamp2 - unixTimestamp1;
+//                console.log(Math.abs(timeDiff))
+                if ( localStorage["ahref-ctrlshiftalt"] == ctrlshiftalt && shortcutkey == "on" && executecount == 0 && Math.abs(timeDiff) < 30000) {
                     executecount = 1;
                     ahrefStart("", {url : "dummy"});
                 }

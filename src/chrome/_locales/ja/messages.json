@@ -18,7 +18,7 @@
     "message": "選択範囲内のハイパーリンクを開く"
   },
   "optionPageHyperlinkDesc": {
-    "message": "選択範囲内に <a href='http://www.google.co.jp/' target='_blank'>通常のリンク</a> があれば、URL文字列（ http://irts.jp/ ）ではなくても開く"
+    "message": "選択範囲内に <a href='http://www.google.co.jp/' target='_blank'>通常のリンク</a> があれば、そのリンク先を開く"
   },
   "optionPageH2listwindow": {
     "message": "URLリストウィンドウ"

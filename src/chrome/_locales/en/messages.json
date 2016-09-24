@@ -18,7 +18,7 @@
     "message": "Open Hyperlink in Selected Strings"
   },
   "optionPageHyperlinkDesc": {
-    "message": "Open <a href='http://www.google.com/' target='_blank'>hyperlink</a> in selected strings, even if it is not URL string ( Like http://irts.jp/ )."
+    "message": "Open <a href='http://www.google.com/' target='_blank'>hyperlink</a> in selected strings.( It will open http://www.google.com/ )."
   },
   "optionPageH2listwindow": {
     "message": "URL List Window"
