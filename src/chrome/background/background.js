@@ -11,7 +11,7 @@ if ( !localStorage["ahref-hyperlink"] ){
 
 function ahrefStart(info, tab){
 
-    // URLがchromeから始まるページは除外
+    // URLがchromeから始まるページと、Chromeウェブストアは除外
     if ( !tab.url.search(/^chrome/) ) {
         // search は文頭からマッチすると 0（偽）を返す。無かったら -1（真）
         alert(chrome.i18n.getMessage("extAlertChrome"));
@@ -66,7 +66,11 @@ function zen2han(url) {
 }
 
 function opentab(url){
-    chrome.tabs.create({"url":url, "selected":false });
+    if ( popupfromwindow ) {
+        chrome.tabs.create({"windowId":popupfromwindow.id, "url":url, "selected":false });
+    } else {
+        chrome.tabs.create({"url":url, "selected":false });
+    }
 }
 
 function ahrefopen(url) {
@@ -142,6 +146,7 @@ function ahrefopen(url) {
             chrome.windows.getLastFocused(null, function (currentwindow){
                 var popup_width  = Math.round(currentwindow.width * 0.5);
                 var popup_height = Math.round(currentwindow.height * 0.75);
+                popupfromwindow  = currentwindow;
                 chrome.windows.create({url:'background/popup.html', width:popup_width, height:popup_height, type:'popup'});
             });
         } else {
@@ -160,6 +165,7 @@ function ahrefopen(url) {
     ctrlshiftalt  = "000";
     executecount = 0;
     clipboard = 0;
+    popupfromwindow = "";
 }
 
 chrome.extension.onRequest.addListener(
@@ -236,13 +242,13 @@ chrome.extension.onRequest.addListener(
 );
 
 // 違うタブを選択した時、あるいは新しいタブを開いた時
-chrome.tabs.onSelectionChanged.addListener(
+chrome.tabs.onActivated.addListener(
     function() {
         // 拡張機能ページ、オプションページ以外（URLがchromeから始まるページは除外）
-        chrome.tabs.query({active: true},
+        chrome.tabs.query({active: true, currentWindow: true, status: "complete" },
             function(current) {
                 // search は文頭からマッチすると 0（偽）を返す。無かったら -1（真）
-                if ( current[0].url.search(/^chrome/) ) {
+                if ( typeof(current[0]) != 'undefined' && current[0].url.search(/^chrome/) && current[0].url.search(/^https:\/\/chrome\.google\.com\//) ) {
                     chrome.tabs.executeScript(null, {file: "content/ahrefSettings.js"});
                 }
             }
@@ -258,6 +264,7 @@ var shortcutkey = "off";
 var ctrlshiftalt  = "000";
 var executecount = 0;
 var clipboard = 0;
+var popupfromwindow = "";
 var selectedText = "";
 if ( localStorage["ahref-clipboard"] == "on" ) {
     context  = "all";

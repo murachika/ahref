@@ -77,8 +77,11 @@
   "popupPagedesc": {
     "message": "Check the URL to open."
   },
+  "popupPagecheckimg": {
+    "message": "Check Image Only"
+  },
   "popupPagecheckall": {
-    "message": "Check All"
+    "message": "Check All URL"
   },
   "ahref_openurl": {
     "message": "A HREF++"

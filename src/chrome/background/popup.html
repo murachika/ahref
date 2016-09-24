@@ -19,14 +19,26 @@ div.urllist {
     font-size  : 12px;
     border-bottom: solid 1px #2d74a2;
 }
+.thumbnail {
+    width : 75px;
+    transition-property: width;
+    transition-duration: 0.5s;
+    transition-timing-function:ease;
+}
+.thumbnail:hover {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    width: 90%;
+}
 </style>
 </head>
   <body>
     <img id="ahref48" src="../img/ahref48.png"><br><br>
     <span id="popupPagedesc"></span><br><br>
     <div id="ahref_urllist"></div>
+    　<input type="checkbox" name="img-check" id="img-check"><span id="popupPagecheckimg"></span><br>
     　<input type="checkbox" name="all-check" id="all-check" checked><span id="popupPagecheckall"></span><br><br>
-    <button id="ahref_openurl"></button>　<button id="ahref_cancel"></button>
+    <button id="ahref_openurl"></button>　<button id="ahref_cancel"></button><br><br><br>
   </body>
   <script type="text/javascript" src="popup.js"></script>
 </html>

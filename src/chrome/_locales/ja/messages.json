@@ -77,8 +77,11 @@
   "popupPagedesc": {
     "message": "A HREF++ で開く URL にチェックを付けて下さい。"
   },
+  "popupPagecheckimg": {
+    "message": "画像 URL のみチェックする"
+  },
   "popupPagecheckall": {
-    "message": "全てのチェックボックスにチェックする"
+    "message": "全ての URL にチェックする"
   },
   "ahref_openurl": {
     "message": "A HREF++ を実行"
