@@ -1,0 +1,16 @@
+﻿<?xml version="1.0"?>
+
+<overlay id="ahrefOverlay"
+         xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
+
+	<script type="application/x-javascript" src="chrome://ahref/content/ahrefOverlay.js" />
+
+	<popup id="contentAreaContextMenu">
+		<menuitem id="ahref-menuitem"
+		label="A HREF++(あ・は～ふ)"
+		accesskey="A"
+		insertbefore="context-searchselect"
+		oncommand="ahrefopen();"/>
+	</popup>
+
+</overlay>

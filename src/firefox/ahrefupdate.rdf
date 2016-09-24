@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<RDF:RDF xmlns:em="http://www.mozilla.org/2004/em-rdf#"
+         xmlns:NC="http://home.netscape.com/NC-rdf#"
+         xmlns:RDF="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+  <RDF:Seq RDF:about="rdf:#$InFhN3">
+    <RDF:li RDF:resource="urn:mozilla:extension:{C4623F6B-C6B1-430d-AA9D-5B256810604F}:0.5.6"/>
+  </RDF:Seq>
+  <Description RDF:about="rdf:#$LnFhN3"
+                   em:id="{ec8030f7-c20a-464f-9b0e-13a3a9e97384}"
+                   em:minVersion="1.5"
+                   em:maxVersion="3.*"
+                   em:updateLink="http://ren.vis.ne.jp/programs/ahref.xpi"
+                   em:updateHash="sha1:605ad8f3840e20ed525180ca6f1616e62eacf7f4" />
+  <RDF:Description RDF:about="urn:mozilla:extension:{C4623F6B-C6B1-430d-AA9D-5B256810604F}:0.5.6"
+                   em:version="0.5.6"
+                   em:signature="MIGTMA0GCSqGSIb3DQEBDQUAA4GBAEl8WdlKZD1uWVaVYVD8VFa0QPX+WinMk5KhEn0JHCnqMgsogR3//aCLhfavoxA43UpUOH8OfU99ydBVKX96HNhQym9nwcH7SR1U8/pJPBUh19/ApbpjUHuKgChjSK+c45t8bcmtCSirNMo+JRKJ5Xzsug1sUL2h+/+95cTUqa0q">
+    <em:targetApplication RDF:resource="rdf:#$LnFhN3"/>
+  </RDF:Description>
+  <RDF:Description RDF:about="urn:mozilla:extension:{C4623F6B-C6B1-430d-AA9D-5B256810604F}"
+                   em:signature="MIGTMA0GCSqGSIb3DQEBDQUAA4GBAKFEoJvUAVxmMO0LVBTLChukiqVPDYqZlTNLoqvanMdzTA/V4AEhFsSVmfrhzK8uLgep1zw9BituUCP8RRakKBaoiwDT2pz0oS31vv1oNYRHnVVaerH1Ctw3npwgv72ZH6re0aa33yePI2+e44SsWtF+zBPMfChtoMI9FDVMNGwo">
+    <em:updates RDF:resource="rdf:#$InFhN3"/>
+  </RDF:Description>
+</RDF:RDF>
