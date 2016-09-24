@@ -79,7 +79,7 @@ function ahrefopen(info, tab) {
 		n++;
 		} while (n < list.length);
 	} else {
-		alert ('No URLs Found.');
+		alert (extAlert);
 	}
 	
 	ctrlchk = 0;
@@ -104,8 +104,10 @@ chrome.extension.onRequest.addListener(
 	}
 );
 
-var ctrlchk = 0;
+var ctrlchk  = 0;
 var shiftchk = 0;
-var id = chrome.contextMenus.create({"title": "A HREF++", "contexts":["selection"], "onclick": ahrefopen});
+var extTitle = chrome.i18n.getMessage("extName");
+var extAlert = chrome.i18n.getMessage("extAlertMessage");
+var id       = chrome.contextMenus.create({"title": extTitle, "contexts":["selection"], "onclick": ahrefopen});
 
 </script>

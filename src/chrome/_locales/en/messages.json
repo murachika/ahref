@@ -1,0 +1,14 @@
+{
+  "extName": {
+    "message": "A HREF++",
+    "description": "Extention name."
+  },
+  "extDescription": {
+    "message": "Open the URLs included in selected string.",
+    "description": "Description of extention."
+  },
+  "extAlertMessage": {
+    "message": "No URLs Found.",
+    "description": "Alert message."
+  }
+}

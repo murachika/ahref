@@ -1,0 +1,14 @@
+{
+  "extName": {
+    "message": "A HREF++（あ・は～ふ）",
+    "description": "拡張機能名"
+  },
+  "extDescription": {
+    "message": "リンクの無いURL文字列を選択して実行すると、新しいタブでそのURLを開く事ができます。",
+    "description": "拡張機能の説明"
+  },
+  "extAlertMessage": {
+    "message": "URLが含まれていません。",
+    "description": "アラートメッセージ"
+  }
+}
