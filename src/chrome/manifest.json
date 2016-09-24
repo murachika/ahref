@@ -1,0 +1,15 @@
+{
+  "name": "A HREF++",
+  "description": "Open the URLs included in selected string.",
+  "version": "0.6",
+  "icons": { "16": "ahref16.png",
+             "48": "ahref48.png",
+            "128": "ahref128.png" },
+  "permissions": ["contextMenus","tabs"],
+  "content_scripts": [ {
+    "js": [ "ahrefContent.js" ],
+    "matches": [ "http://*/*", "https://*/*" ],
+    "all_frames":true
+   } ],
+  "background_page": "background.html"
+}
