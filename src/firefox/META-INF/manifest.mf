@@ -1,0 +1,57 @@
+Manifest-Version: 1.0
+
+Name: install.rdf
+Digest-Algorithms: MD5 SHA1
+MD5-Digest: z6nlMYehi4KiEB346baZgA==
+SHA1-Digest: qV71j0pTIgmfHOkjh0XBhWEE2m0=
+
+Name: chrome.manifest
+Digest-Algorithms: MD5 SHA1
+MD5-Digest: rdI31UmlsgjlCR9LhIyxSQ==
+SHA1-Digest: MGaCSlmM1uFwRVgaJ8TAqgZzoxE=
+
+Name: chrome/content/ahrefOverlay.js
+Digest-Algorithms: MD5 SHA1
+MD5-Digest: //F6ns0i4JpMiGY73lHMwQ==
+SHA1-Digest: PwrXaYGqL1Eb1kNvdrdFBnJQWZ0=
+
+Name: chrome/content/ahrefOverlay.xul
+Digest-Algorithms: MD5 SHA1
+MD5-Digest: QCLEsk/A4TEOZnxoD+EIRw==
+SHA1-Digest: tVAlaE+pIVGnh8IaTdhnbn3mI/8=
+
+Name: chrome/locale/en-US/overlay.dtd
+Digest-Algorithms: MD5 SHA1
+MD5-Digest: PuTR3J0QAaehBcXLSxDAug==
+SHA1-Digest: Pd7z7uO8SPbtONAdsj85ZRhYeZQ=
+
+Name: chrome/locale/en-US/overlay.properties
+Digest-Algorithms: MD5 SHA1
+MD5-Digest: 2NFLAHvSivsJDSFjT3DPgw==
+SHA1-Digest: LtiqlVZH7o2sROs+Z/qq47Yaa+U=
+
+Name: chrome/locale/ja-JP/overlay.dtd
+Digest-Algorithms: MD5 SHA1
+MD5-Digest: +oL5ovb/UvtQOY4cO9mYEQ==
+SHA1-Digest: 9GuD8apc8ZefVURhB5hbKZjYhQg=
+
+Name: chrome/locale/ja-JP/overlay.properties
+Digest-Algorithms: MD5 SHA1
+MD5-Digest: IZ9h4v1RSeCpyXgL8Bq56Q==
+SHA1-Digest: M9EW0vx+LiRYisLtbHWHuGZamAI=
+
+Name: chrome/skin/ahref16.png
+Digest-Algorithms: MD5 SHA1
+MD5-Digest: NfYqRTyXSoxBEtxi5qh5+Q==
+SHA1-Digest: MJ75e60IdGvBD1NFb+yLbdPDBqE=
+
+Name: chrome/skin/ahref32.png
+Digest-Algorithms: MD5 SHA1
+MD5-Digest: QTcHx1/OkS186GINS/0y8g==
+SHA1-Digest: gCpGd/lE1x/A/+Fh7e1lMJMpToo=
+
+Name: chrome/skin/overlay.css
+Digest-Algorithms: MD5 SHA1
+MD5-Digest: xcYfnz4JOsPmsWhegVwGrg==
+SHA1-Digest: 3KdghLGr3JDXUU32K2dbIAy/3hM=
+
