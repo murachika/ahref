@@ -2,15 +2,18 @@
   "name": "__MSG_extName__",
   "description": "__MSG_extDescription__",
   "default_locale": "ja",
-  "version": "0.6.5",
+  "version": "0.6.6",
+  "manifest_version": 2,
   "icons": { "16": "ahref16.png",
              "48": "ahref48.png",
             "128": "ahref128.png" },
-  "permissions": ["contextMenus","tabs"],
+  "permissions": ["contextMenus"],
   "content_scripts": [ {
     "js": [ "ahrefContent.js" ],
     "matches": [ "http://*/*", "https://*/*" ],
     "all_frames":true
    } ],
-  "background_page": "background.html"
+  "background": {
+    "scripts":["background.js"]
+  }
 }
