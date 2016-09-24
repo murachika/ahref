@@ -1,4 +1,4 @@
-'Copyright (C) 2010 Murachika All rights reserved.
+'Copyright (C) 2011 Murachika All rights reserved.
 'http://irts.jp/
 
 Dim FS
@@ -7,19 +7,21 @@ Dim DesktopPath
 Dim InstallPath
 Dim InstallFile
 Dim AppName
+Dim AppVersion
 Dim HtmlFileName
 
 Set FS         = CreateObject("scripting.FileSystemObject")
 Set WSHShell   = WScript.CreateObject("WScript.Shell")
 
 AppName        = "A HREF++（あ・は～ふ）"
+AppVersion     = "3.2.1"
 InstMessage0   = AppName & " をインストールする時は「はい」、" & Chr(13) & "アンインストールする時は「いいえ」、" & Chr(13) & "終了するときは「キャンセル」を押して下さい。"
 InstMessage1   = AppName & " は既にインストールされています。"
 InstMessage2   = AppName & " のインストールが終了しました。" & Chr(13) & "ブラウザを再起動して下さい。"
 UninstMessage1 = AppName & " はまだインストールされていません。"
 UninstMessage2 = AppName & " のアンインストールが終了しました。"
 MsgBoxButtons  = 67 'vbYesNoCancel(3) + vbInformation(64)
-MsgBoxTitle    = AppName & " Ver3.2 セットアップ"
+MsgBoxTitle    = AppName & " Ver" & AppVersion & " セットアップ"
 AlertMessage   = "URLが含まれていません。"
 HtmlFileName   = "\ahref_ja.html"
 
@@ -57,7 +59,8 @@ Sub install
 	Set CTF = FS.CreateTextFile(InstallFile, True)
 	CTF.WriteLine "<SCRIPT language='JavaScript'>"
 	CTF.WriteLine "/*"
-	CTF.WriteLine "Copyright (C) 2010 murachika All rights reserved."
+	CTF.WriteLine "A HREF++  Ver" & AppVersion
+	CTF.WriteLine "Copyright (C) 2011 murachika All rights reserved."
 	CTF.WriteLine "http://irts.jp/"
 	CTF.WriteLine "*/"
 	CTF.WriteLine "function fix() {"
@@ -92,7 +95,7 @@ Sub install
 	CTF.WriteLine "	url = str;"
 	CTF.WriteLine "}"
 	CTF.WriteLine "function listing() {"
-	CTF.WriteLine "	list = url.match(/((http:\/|ftp|ttp:\/|tp:\/|tps:\/|www|http\/\/)[\w\.\,\~\-\/\?\&\+\=\:\@\%\;\#\*\^]{2,}\.[\w]{2,10}\/[\w\.\,\~\-\/\?\&\+\=\:\@\%\;\#\*\^]*[=]+[\u3005\u3007\u303B\u3040-\u309F\u30A0-\u30FF\u3200-\u9FFF\uFF00-\uFF9F]*[\w\.\,\~\-\/\?\&\+\=\:\@\%\;\#\*\^]*)|((http:\/|ftp|ttp:\/|tp:\/|tps:\/|www|http\/\/)[\w\.\,\~\-\/\?\&\+\=\:\@\%\;\#\*\^]{2,}\.[\w]{2,10}[\w\.\,\~\-\/\?\&\+\=\:\@\%\;\#\*\^]*)/ig);"
+	CTF.WriteLine "	list = url.match(/((http:\/|ftp|ttp:\/|tp:\/|tps:\/|www|http\/\/)[\!\w\.\,\~\-\/\?\&\+\=\:\@\%\;\#\*\^]{2,}\.[\w]{2,10}\/[\!\w\.\,\~\-\/\?\&\+\=\:\@\%\;\#\*\^]*[=]+[\u3005\u3007\u303B\u3040-\u309F\u30A0-\u30FF\u3200-\u9FFF\uFF00-\uFF9F]*[\!\w\.\,\~\-\/\?\&\+\=\:\@\%\;\#\*\^]*)|((http:\/|ftp|ttp:\/|tp:\/|tps:\/|www|http\/\/)[\!\w\.\,\~\-\/\?\&\+\=\:\@\%\;\#\*\^]{2,}\.[\w]{2,10}[\!\w\.\,\~\-\/\?\&\+\=\:\@\%\;\#\*\^]*)/ig);"
 	CTF.WriteLine "}"
 	CTF.WriteLine "function exec() {"
 	CTF.WriteLine "	var n = 0;"

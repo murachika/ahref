@@ -1,4 +1,4 @@
-'Copyright (C) 2010 Murachika All rights reserved.
+'Copyright (C) 2011 Murachika All rights reserved.
 'http://irts.jp/
 
 Dim FS
@@ -7,19 +7,21 @@ Dim DesktopPath
 Dim InstallPath
 Dim InstallFile
 Dim AppName
+Dim AppVersion
 Dim HtmlFileName
 
 Set FS         = CreateObject("scripting.FileSystemObject")
 Set WSHShell   = WScript.CreateObject("WScript.Shell")
 
 AppName        = "A HREF++"
+AppVersion     = "3.2.1"
 InstMessage0   = "If you install  " + AppName + "  click 'Yes'" & Chr(13) & "  or uninstall  " + AppName + "  click 'No'"
 InstMessage1   = AppName & "  is already installed."
 InstMessage2   = AppName & "  install completed successfully." & Chr(13) & "Please restart your Internet Explorer."
 UninstMessage1 = AppName & "  is not yet installed."
 UninstMessage2 = AppName & "  uninstall completed successfully."
 MsgBoxButtons  = 67 'vbYesNoCancel(3) + vbInformation(64)
-MsgBoxTitle    = AppName & " Ver3.2 Setup"
+MsgBoxTitle    = AppName & " Ver" & AppVersion & " Setup"
 AlertMessage   = "No URLs Found."
 HtmlFileName   = "\ahref_en.html"
 
@@ -57,7 +59,8 @@ Sub install
 	Set CTF = FS.CreateTextFile(InstallFile, True)
 	CTF.WriteLine "<SCRIPT language='JavaScript'>"
 	CTF.WriteLine "/*"
-	CTF.WriteLine "Copyright (C) 2010 murachika All rights reserved."
+	CTF.WriteLine "A HREF++  Ver" & AppVersion
+	CTF.WriteLine "Copyright (C) 2011 murachika All rights reserved."
 	CTF.WriteLine "http://irts.jp/"
 	CTF.WriteLine "*/"
 	CTF.WriteLine "function fix() {"
@@ -92,7 +95,7 @@ Sub install
 	CTF.WriteLine "	url = str;"
 	CTF.WriteLine "}"
 	CTF.WriteLine "function listing() {"
-	CTF.WriteLine "	list = url.match(/((http:\/|ftp|ttp:\/|tp:\/|tps:\/|www|http\/\/)[\w\.\,\~\-\/\?\&\+\=\:\@\%\;\#\*\^]{2,}\.[\w]{2,10}\/[\w\.\,\~\-\/\?\&\+\=\:\@\%\;\#\*\^]*[=]+[\u3005\u3007\u303B\u3040-\u309F\u30A0-\u30FF\u3200-\u9FFF\uFF00-\uFF9F]*[\w\.\,\~\-\/\?\&\+\=\:\@\%\;\#\*\^]*)|((http:\/|ftp|ttp:\/|tp:\/|tps:\/|www|http\/\/)[\w\.\,\~\-\/\?\&\+\=\:\@\%\;\#\*\^]{2,}\.[\w]{2,10}[\w\.\,\~\-\/\?\&\+\=\:\@\%\;\#\*\^]*)/ig);"
+	CTF.WriteLine "	list = url.match(/((http:\/|ftp|ttp:\/|tp:\/|tps:\/|www|http\/\/)[\!\w\.\,\~\-\/\?\&\+\=\:\@\%\;\#\*\^]{2,}\.[\w]{2,10}\/[\!\w\.\,\~\-\/\?\&\+\=\:\@\%\;\#\*\^]*[=]+[\u3005\u3007\u303B\u3040-\u309F\u30A0-\u30FF\u3200-\u9FFF\uFF00-\uFF9F]*[\!\w\.\,\~\-\/\?\&\+\=\:\@\%\;\#\*\^]*)|((http:\/|ftp|ttp:\/|tp:\/|tps:\/|www|http\/\/)[\!\w\.\,\~\-\/\?\&\+\=\:\@\%\;\#\*\^]{2,}\.[\w]{2,10}[\!\w\.\,\~\-\/\?\&\+\=\:\@\%\;\#\*\^]*)/ig);"
 	CTF.WriteLine "}"
 	CTF.WriteLine "function exec() {"
 	CTF.WriteLine "	var n = 0;"
