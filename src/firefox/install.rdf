@@ -3,18 +3,18 @@
   <Description about="urn:mozilla:install-manifest">
     <em:id>ahrefplusplus@irts.jp</em:id>
     <em:type>2</em:type>
-    <em:name>A HREF++（あ・は〜ふ）</em:name>
-    <em:version>0.6.2</em:version>
+    <em:name>A HREF++</em:name>
+    <em:version>0.6.3</em:version>
     <em:creator>murachika</em:creator>
     <em:homepageURL>http://irts.jp/</em:homepageURL>
-    <em:description>リンクの無いURL文字列を選択して実行すると新しいタブでそのURLを開く事ができます。</em:description>
+    <em:description>Open the URLs included in selected string.</em:description>
     <em:localized>
       <Description>
-        <em:locale>en</em:locale>
-        <em:name>A HREF++</em:name>
+        <em:locale>ja</em:locale>
+        <em:name>A HREF++（あ・は～ふ）</em:name>
         <em:creator>murachika</em:creator>
         <em:homepageURL>http://irts.jp/</em:homepageURL>
-        <em:description>Open the URLs included in selected string.</em:description>
+        <em:description>リンクの無いURL文字列を選択して実行すると新しいタブでそのURLを開く事ができます。</em:description>
       </Description>
     </em:localized>
     <em:targetApplication>

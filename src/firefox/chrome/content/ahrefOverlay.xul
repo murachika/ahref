@@ -1,16 +1,24 @@
-<?xml version="1.0"?>
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet href="chrome://ahrefplusplus/skin/overlay.css" type="text/css"?>
+<!DOCTYPE overlay SYSTEM "chrome://ahrefplusplus/locale/overlay.dtd">
+<overlay id="ahrefplusplus-overlay"
+  xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
 
-<overlay id="ahrefOverlay"
-         xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
+  <script type="application/x-javascript"
+    src="chrome://ahrefplusplus/content/ahrefOverlay.js" />
 
-	<script type="application/x-javascript" src="chrome://ahrefplusplus/content/ahrefOverlay.js" />
+  <stringbundleset id="stringbundleset">
+    <stringbundle id="ahrefplusplus-strings"
+      src="chrome://ahrefplusplus/locale/overlay.properties"/>
+  </stringbundleset>
 
-	<popup id="contentAreaContextMenu">
-		<menuitem id="ahref-menuitem"
-		label="A HREF++"
-		accesskey="A"
-		insertbefore="context-searchselect"
-		oncommand="ahrefopen();"/>
-	</popup>
+  <popup id="contentAreaContextMenu">
+    <menuitem id="context-ahrefplusplus"
+              class="menuitem-iconic"
+              label="&ahrefplusplusContext.label;"
+              accesskey="&ahrefplusplusContext.accesskey;"
+              insertbefore="context-searchselect"
+              oncommand="ahrefPlusplus.ahrefOverlay.ahrefopen();"/>
+  </popup>
 
 </overlay>

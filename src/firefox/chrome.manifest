@@ -3,4 +3,4 @@ skin      ahrefplusplus   classic/1.0   chrome/skin/
 locale    ahrefplusplus   ja-JP         chrome/locale/ja-JP/ 
 locale    ahrefplusplus   en-US         chrome/locale/en-US/
 
-overlay   chrome://browser/content/browser.xul   chrome://ahrefplusplus/content/ff-overlay.xul
+overlay   chrome://browser/content/browser.xul   chrome://ahrefplusplus/content/ahrefOverlay.xul
