@@ -10,5 +10,83 @@
   "extAlertMessage": {
     "message": "No URLs Found.",
     "description": "Alert message."
+  },
+  "optionPageH1": {
+    "message": "A HREF++ Settings"
+  },
+  "optionPageH2hyperlink": {
+    "message": "Open Hyperlink in Selected Strings"
+  },
+  "optionPageHyperlinkDesc": {
+    "message": "Open <a href='http://www.google.com/' target='_blank'>hyperlink</a> in selected strings, even if it is not URL string ( Like http://irts.jp/ )."
+  },
+  "optionPageH2listwindow": {
+    "message": "URL List Window"
+  },
+  "optionPageListwindowDesc1": {
+    "message": "Display URL List Window before open when number of URL to open exceeds the threshold value."
+  },
+  "optionPageListwindowDesc2": {
+    "message": " * If URL is image ( .jpg .bmp .png .gif ), thumbnail is displayed on URL List Window."
+  },
+  "optionPageListwindowDesc3": {
+    "message": "Threshold"
+  },
+  "optionPageListwindowDesc4": {
+    "message": "(If you set 0, URL List Window is always displayed.)"
+  },
+  "optionPageH2clipboard": {
+    "message": "Clipboard Access"
+  },
+  "optionPageClipboardDesc1": {
+    "message": "Text string in the clipboard is referred if you execute with no text select."
+  },
+  "optionPageClipboardDesc2": {
+    "message": " * 'A HREF++' context menu is always displayed."
+  },
+  "optionPageClipboardDesc3": {
+    "message": "Always display URL List Window when clipboard access occurs."
+  },
+  "optionPageclipboardDesc4": {
+    "message": " * In order to not open carelessly if clipboard text contains many URL."
+  },
+  "optionPageH2keyboard": {
+    "message": "Keyboard Short Cut"
+  },
+  "optionPageKeyboardDesc1": {
+    "message": "Use Keyboard Short Cut"
+  },
+  "optionPageKeyboardDesc2": {
+    "message": " * It does not work on special page like Chrome Setting Page."
+  },
+  "optionPageKeyboardAlert": {
+    "message": "Check the key for keyboard short cut."
+  },
+  "savebutton": {
+    "message": "Save Settings"
+  },
+  "savebuttonalert": {
+    "message": "Settings saved."
+  },
+  "defaultsettings": {
+    "message": "Restore Default"
+  },
+  "defaultsettingsalert": {
+    "message": "Restored to default settings."
+  },
+  "popupPagedesc": {
+    "message": "Check the URL to open."
+  },
+  "popupPagecheckall": {
+    "message": "Check All"
+  },
+  "ahref_openurl": {
+    "message": "A HREF++"
+  },
+  "ahref_cancel": {
+    "message": "Cancel"
+  },
+  "extAlertChrome": {
+    "message": "It does not work on special page like Chrome Setting Page."
   }
 }

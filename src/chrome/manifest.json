@@ -2,18 +2,19 @@
   "name": "__MSG_extName__",
   "description": "__MSG_extDescription__",
   "default_locale": "ja",
-  "version": "0.6.6",
+  "version": "0.7",
   "manifest_version": 2,
-  "icons": { "16": "ahref16.png",
-             "48": "ahref48.png",
-            "128": "ahref128.png" },
-  "permissions": ["contextMenus"],
+  "icons": { "16": "img/ahref16.png",
+             "48": "img/ahref48.png",
+            "128": "img/ahref128.png" },
+  "permissions": ["tabs", "management", "contextMenus", "clipboardRead", "http://*/*", "https://*/*"],
+  "background": {
+    "page": "background/background.html"
+  },
+  "options_page": "option/ahrefOptions.html",
   "content_scripts": [ {
-    "js": [ "ahrefContent.js" ],
+    "js": [ "content/ahrefSettings.js", "content/ahrefContent.js" ],
     "matches": [ "http://*/*", "https://*/*" ],
     "all_frames":true
-   } ],
-  "background": {
-    "scripts":["background.js"]
-  }
+   } ]
 }

@@ -10,5 +10,83 @@
   "extAlertMessage": {
     "message": "URLが含まれていません。",
     "description": "アラートメッセージ"
+  },
+  "optionPageH1": {
+    "message": "A HREF++（あ・は～ふ） 設定"
+  },
+  "optionPageH2hyperlink": {
+    "message": "選択範囲内のハイパーリンクを開く"
+  },
+  "optionPageHyperlinkDesc": {
+    "message": "選択範囲内に <a href='http://www.google.co.jp/' target='_blank'>通常のリンク</a> があれば、URL文字列（ http://irts.jp/ ）ではなくても開く"
+  },
+  "optionPageH2listwindow": {
+    "message": "URLリストウィンドウ"
+  },
+  "optionPageListwindowDesc1": {
+    "message": "開く URL の数が閾値を越えた場合、開く前に URLリストウィンドウを表示する"
+  },
+  "optionPageListwindowDesc2": {
+    "message": " ※ URLが画像の場合、URLリストウィンドウにはサムネイルが表示されます"
+  },
+  "optionPageListwindowDesc3": {
+    "message": "閾値"
+  },
+  "optionPageListwindowDesc4": {
+    "message": "（0を設定すると、常に URLリストウィンドウを表示するようになります）"
+  },
+  "optionPageH2clipboard": {
+    "message": "クリップボードを参照する"
+  },
+  "optionPageClipboardDesc1": {
+    "message": "文字列を選択せずに実行するとクリップボード内の文字列を参照する"
+  },
+  "optionPageClipboardDesc2": {
+    "message": " ※ 常に右クリックメニューに A HREF++ が表示されるようになります"
+  },
+  "optionPageClipboardDesc3": {
+    "message": "クリップボード参照時は常に URLリストウィンドウを表示する"
+  },
+  "optionPageclipboardDesc4": {
+    "message": " ※ 多数の URL が含まれていた場合など、不用意に開かないようにする為"
+  },
+  "optionPageH2keyboard": {
+    "message": "キーボードショートカット"
+  },
+  "optionPageKeyboardDesc1": {
+    "message": "キーボードショートカットを使用する"
+  },
+  "optionPageKeyboardDesc2": {
+    "message": " ※ Chrome設定ページ等の特殊ページでは動作しません"
+  },
+  "optionPageKeyboardAlert": {
+    "message": "キーボードショートカットのキーを指定して下さい。"
+  },
+  "savebutton": {
+    "message": "　設定を保存　"
+  },
+  "savebuttonalert": {
+    "message": "設定を保存しました。"
+  },
+  "defaultsettings": {
+    "message": "　デフォルト設定に戻す　"
+  },
+  "defaultsettingsalert": {
+    "message": "設定をデフォルトに戻しました。"
+  },
+  "popupPagedesc": {
+    "message": "A HREF++ で開く URL にチェックを付けて下さい。"
+  },
+  "popupPagecheckall": {
+    "message": "全てのチェックボックスにチェックする"
+  },
+  "ahref_openurl": {
+    "message": "A HREF++ を実行"
+  },
+  "ahref_cancel": {
+    "message": "キャンセル"
+  },
+  "extAlertChrome": {
+    "message": "Chrome設定ページ等の特殊ページでは動作しません"
   }
 }
