@@ -82,4 +82,3 @@ function updateSelectedTexts() {
 }
 document.addEventListener('mouseup', updateSelectedTexts , true);
 
-// 

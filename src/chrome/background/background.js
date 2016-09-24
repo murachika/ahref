@@ -223,7 +223,6 @@ chrome.extension.onRequest.addListener(
                 "ahref-shortcutkey"      : localStorage["ahref-shortcutkey"]
             } );
         } else if ( request == "backgroundReload" ){
-            chrome.tabs.executeScript(null, {file: "content/ahrefSettings.js"});
             if ( localStorage["ahref-clipboard"] == "on" ) {
                 context  = "all";
             } else {
@@ -233,6 +232,21 @@ chrome.extension.onRequest.addListener(
         } else if ( request == "getURLs" ) {
             sendResponse( urllist );
         }
+    }
+);
+
+// 違うタブを選択した時、あるいは新しいタブを開いた時
+chrome.tabs.onSelectionChanged.addListener(
+    function() {
+        // 拡張機能ページ、オプションページ以外（URLがchromeから始まるページは除外）
+        chrome.tabs.query({active: true},
+            function(current) {
+                // search は文頭からマッチすると 0（偽）を返す。無かったら -1（真）
+                if ( current[0].url.search(/^chrome/) ) {
+                    chrome.tabs.executeScript(null, {file: "content/ahrefSettings.js"});
+                }
+            }
+        );
     }
 );
 
