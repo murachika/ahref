@@ -1,7 +1,7 @@
 ------------------------------
-     A HREF++     Ver3.2.1    
+     A HREF++     Ver3.2.2    
 ------------------------------
- 2011/08/13
+ 2013/11/24
 
 * About
   - Right click extention for Internet Explorer.
@@ -19,15 +19,15 @@
   - Double click "A_HREF_plusplus_SetUp.vbs".
 
 * Environment
-  - InternetExplorer 6/7/8/9
-  - Windows 7/Vista/XP
+  - InternetExplorer 9/10/11
+  - Windows 8/7/Vista
 
 * Tips
   - In case some security software alert you when you install "A HREF++",
     please permit this program. 
   - When you open many URLs by "A HREF++" at once, Pop-up Blocker may block
     opening windows. Please turn off Pop-up Blocker as necessary.
-  - I recommend you to change Tabs Setting of "Internet Options" (IE7/8/9),
+  - I recommend you to change Tabs Setting of "Internet Options",
     "Let InternetExplorer decide how pop-ups should open" or "Always open
     pop-ups in a new tab".
 
@@ -36,6 +36,9 @@
   Website : http://irts.jp/
 
 * Changelog
+  - 2013/11/24   Ver3.2.2
+   -- Fix for Internet Explorer 11.
+
   - 2011/08/13   Ver3.2.1
    -- Added regular expression "!".
 
